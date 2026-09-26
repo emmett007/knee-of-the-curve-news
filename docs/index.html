@@ -1,33 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Knee of the Curve News · Sat Sep 26 2026</title>
 <style>
-:root{--ink:#141414;--muted:#5c5c5c;--rule:#d4cfc4;--link:#0b57d0;--paper:#faf7f0;--gold:#c9a227}*{box-sizing:border-box}body{margin:0;background:#ddd6c8;color:var(--ink);font:21px/1.65 Georgia,"Times New Roman",serif}.sheet{max-width:720px;margin:auto;background:var(--paper);padding:0 20px 40px;box-shadow:0 8px 40px #0002}a{color:var(--link)}h1{font-size:46px;line-height:1.1;margin:8px 0}.masthead{text-align:center;padding:22px 0 18px;border-bottom:3px double var(--ink)}.kicker,h2,.meta{font-family:Arial,sans-serif}.kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}.meta{font-size:15px;color:var(--muted)}.edition{display:inline-block;border:1px solid;padding:4px 9px;font:700 12px Arial;letter-spacing:.12em;text-transform:uppercase}.lede{font-size:22px}.gaps,.card{background:#fff;border:1px solid var(--rule);padding:14px 16px;margin:12px 0 18px}.gaps{background:#fff8f0;border-style:dashed;font:16px/1.55 Arial,sans-serif}.gaps strong{display:block;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}h2{font-size:15px;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid;padding-bottom:6px;margin-top:28px}h3{font-size:24px;margin:18px 0 8px}h4{font-size:27px;line-height:1.25;margin:0 0 8px}.why{background:#f3efe6;border-left:3px solid var(--gold);padding:9px 11px;font:16px/1.55 Arial,sans-serif}.src,.note,footer{font:15px/1.55 Arial,sans-serif;color:var(--muted)}li{margin-bottom:5px}footer{text-align:center;border-top:3px double;padding-top:14px;margin-top:30px}
+  :root {
+    --ink: #141414;
+    --muted: #5c5c5c;
+    --rule: #d4cfc4;
+    --link: #0b57d0;
+    --paper: #faf7f0;
+    --band: #0f1624;
+    --gold: #c9a227;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #ddd6c8;
+    color: var(--ink);
+    font: 21px/1.65 Georgia, "Times New Roman", Times, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0 0 40px;
+    box-shadow: 0 8px 40px rgba(0,0,0,.12);
+  }
+  a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+  a.play-link { text-decoration: none; color: inherit; display: block; }
+  img { max-width: 100%; height: auto; display: block; }
+  .hero { position: relative; }
+  .hero img { width: 100%; height: auto; }
+  .masthead {
+    text-align: center;
+    padding: 18px 22px 16px;
+    border-bottom: 3px double var(--ink);
+    background: var(--paper);
+  }
+  .masthead .kicker {
+    font: 700 13px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .masthead h1 {
+    margin: 8px 0 4px;
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+  .masthead .dateline {
+    font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--muted);
+  }
+  .masthead .edition {
+    display: inline-block;
+    margin-top: 10px;
+    font: 700 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    padding: 5px 10px;
+  }
+  .wrap { padding: 0 20px; }
+  .lede {
+    margin: 18px 0 8px;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #2a2a2a;
+  }
+  .section-art { margin: 22px -20px 8px; }
+  .section-art img { width: 100%; }
+  section { margin: 0 0 28px; }
+  h2 {
+    margin: 0 0 12px;
+    font: 800 15px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+  }
+  h3.handle {
+    margin: 22px 0 10px;
+    font-size: 24px;
+    font-weight: 800;
+  }
+  h3.handle a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--gold); }
+  .story {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    margin: 0 0 16px;
+    overflow: hidden;
+  }
+  .story .shot { position: relative; background: #111; }
+  .story .shot img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+  .story .body { padding: 14px 16px 16px; }
+  .story h4 {
+    margin: 0 0 8px;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 800;
+  }
+  .story p { margin: 0 0 10px; font-size: 21px; line-height: 1.6; }
+  .story .why {
+    margin: 0 0 10px;
+    padding: 10px 12px;
+    background: #f3efe6;
+    border-left: 3px solid var(--gold);
+    font-size: 16px;
+    line-height: 1.55;
+    color: #333;
+  }
+  .story .src {
+    font: 600 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    word-break: break-word;
+  }
+  .video-badge {
+    position: absolute;
+    left: 12px; bottom: 12px;
+    background: rgba(0,0,0,.78);
+    color: #fff;
+    font: 700 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+  }
+  .note {
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--muted);
+    margin: 4px 0 12px;
+  }
+  .flag {
+    display: inline-block;
+    font: 700 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    background: #f3e6c8;
+    border: 1px solid #c9a84c;
+    padding: 2px 6px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .flag.offline { background: #fde8e8; border-color: #c97a7a; }
+  .flag.clear { background: #e6f0e8; border-color: #6a9a72; }
+  .editorial {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    padding: 16px 18px;
+    margin: 0 0 14px;
+  }
+  .editorial h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .editorial p { margin: 0 0 10px; font-size: 21px; line-height: 1.65; }
+  .editorial p:last-child { margin-bottom: 0; }
+  .editorial ul { margin: 6px 0 0; padding-left: 18px; }
+  .editorial li { margin: 0 0 6px; font-size: 21px; line-height: 1.6; }
+  .gaps {
+    background: #fff8f0;
+    border: 1px dashed #c9a84c;
+    padding: 12px 14px;
+    margin: 8px 0 18px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .gaps strong { display: block; margin-bottom: 6px; font: 700 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+  .footer {
+    border-top: 3px double var(--ink);
+    margin: 28px 20px 0;
+    padding-top: 14px;
+    text-align: center;
+    font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--muted);
+  }
+  .footer code { font-size: 13px; }
+  @media (min-width: 560px) {
+    .wrap { padding: 0 28px; }
+    .masthead { padding: 22px 28px 18px; }
+    .masthead h1 { font-size: 48px; }
+    .section-art { margin-left: -28px; margin-right: -28px; }
+    .footer { margin-left: 28px; margin-right: 28px; }
+  }
+  @media print {
+    body { background: #fff; }
+    .sheet { box-shadow: none; max-width: none; }
+    a { color: #0b57d0; }
+  }
 </style>
 </head>
-<body><article class="sheet">
-<header class="masthead"><div class="kicker">Saturday morning · voice spitball desk</div><h1>Knee of the Curve News</h1><div class="meta">Sat Sep 26 2026 · America/Los_Angeles (PT)</div><div class="edition">Edition 002 · rebuild · social first</div></header>
+<body>
+<article class="sheet">
+
+<header class="masthead">
+  <div class="kicker">Saturday morning · voice spitball desk</div>
+  <h1>Knee of the Curve News</h1>
+  <div class="dateline">Sat Sep 26 2026 · America/Los_Angeles (PT)</div>
+  <div class="edition">Edition 002 · rebuild · social first</div>
+</header>
+
+<div class="wrap">
+
 <p class="lede">Good morning. Calendar is clear, Notes are still Wed’s dump, and X API is dark — so this edition leads with what you actually open for: nine live angles across the three handles, written as columns you can spitball from. Desk notes follow.</p>
-<div class="gaps"><strong>Gaps called out, not papered over</strong>Apple Notes offline since Wed Sep 23 6:24 PM PT dump · WhatsApp Web logged out (Kirill DMs blind) · X API 402 credits depleted · Google Ads figures are Fri Sep 25 snapshot only — no invented Sat spend.</div>
-<section><h2>Spitball Desk — Social &amp; news angles</h2><p class="note">X profiles resolve (<a href="https://x.com/emmettshort">@emmettshort</a> · <a href="https://x.com/HollywoodPods">@HollywoodPods</a> · <a href="https://x.com/AwedMedia">@AwedMedia</a>) but live post metrics are unavailable this morning. Every angle below carries a clickable source. No invented engagement numbers.</p>
-<h3><a href="https://x.com/emmettshort">@emmettshort</a></h3>
-<div class="card"><h4>Comedians are puncturing the “AI is inevitable” sermon</h4><p>The Guardian’s Friday feature follows standup, sketches, and subway-parody ads that treat CEO doom-and-boom talk as material, not scripture. Gallup and CNN polling in the piece frame a public more anxious than excited — which is exactly the tension Knee of the Curve thrives on.</p><p class="why"><strong>Why this handle:</strong> Tech-comedy voice. One clip, one line about “using the LLM in your brain,” and you’re in the lane without chasing the news cycle’s press-release tone.</p><p class="src">Source: <a href="https://www.theguardian.com/technology/2026/sep/25/ai-anxiety-comedy">theguardian.com/…/ai-anxiety-comedy</a></p></div>
-<div class="card"><h4>An AI-designed drug nudged six ageing clocks — carefully</h4><p>Coverage of Rentosertib / Insilico’s phase-2a proteomic-clock readouts is circulating again as longevity bait. The honest frame is biomarker movement, not “reversed ageing” — a distinction LSN readers clock immediately and KOTC can punchline.</p><p class="why"><strong>Why this handle:</strong> Personal brand sits on the LSN ↔ comedy seam. Post the caveat first; the wow second. That order is the brand.</p><p class="src">Source: <a href="https://artificialscience.org/2026/09/ai-designed-drug-six-ageing-clocks/">artificialscience.org</a></p></div>
-<div class="card"><h4>The Voyage LA origin story is still live ammo</h4><p>Voyage’s Hidden Gems interview still carries the Awed + Hollywood Podcasts founder arc in one place — studio, creative shop, and the through-line of building in public. When the timeline needs a spine instead of a hot take, this is the cite.</p><p class="why"><strong>Why this handle:</strong> Evergreen personal-brand post. Pair with a studio photo or a “what I’d tell 2023 Emmett” line and you’re done.</p><p class="src">Source: <a href="https://voyagela.com/interview/hidden-gems-meet-emmett-short-of-awed-media-hollywood-podcasts/">voyagela.com</a></p></div>
-<h3><a href="https://x.com/HollywoodPods">@HollywoodPods</a></h3>
-<div class="card"><h4>Video isn’t replacing audio — it’s expanding the tent</h4><p>Edison Infinite Dial 2026: 57% of Americans 12+ have both listened to and watched a podcast. Megan Lazovick’s line — “video isn’t replacing podcast audio” — is the cleanest pitch support HP has for 3-cam and Premiere Pack this year.</p><p class="why"><strong>Why this handle:</strong> Data-backed studio CTA. Quote the dual-format stat, then hard-link book.</p><p class="src">Study: <a href="https://www.edisonresearch.com/the-infinite-dial-2026/">edisonresearch.com</a> · Video: <a href="https://www.youtube.com/watch?v=luXiCjMpzH4">YouTube webinar</a></p></div>
-<div class="card"><h4>The WeHo price war two doors down is real</h4><p>Melrose Podcasts still lists multi-cam packages from roughly $275/hr with edit and social tiers on RecordingHunt. That keeps HP’s 3-cam at $270 plus the credit loop as a story, not a spreadsheet — “same block, sharper room, clearer book path.”</p><p class="why"><strong>Why this handle:</strong> Competitive positioning without trash talk. Name the neighborhood economics; sell the room.</p><p class="src">Source: <a href="https://www.recordinghunt.com/california/west-hollywood/melrose-podcasts">recordinghunt.com</a></p></div>
-<div class="card"><h4>Own rates + book CTA — say them out loud</h4><p>Public homepage still posts the ladder: Audio $125 · 1-cam $180 · 3-cam $270 · Premiere Pack $899/2hr. Morning posts that bury the price under vibes leave money on the table; the site already did the hard part.</p><p class="why"><strong>Why this handle:</strong> Direct-response hygiene. Rates in the caption, book link in the bio/first comment.</p><p class="src">Source: <a href="https://hollywoodpodcasts.com/">hollywoodpodcasts.com</a></p></div>
-<h3><a href="https://x.com/AwedMedia">@AwedMedia</a></h3>
-<div class="card"><h4>Hybrid creative is beating pure AI on Meta — when trust matters</h4><p>Alex Neiman’s 2026 write-up argues AI wins CTR and velocity while human craft wins trust and conversion as AOV climbs, with hybrid pipelines claiming about 2.3× CTR versus pure AI in the cited tests. That maps cleanly onto Awed’s Human Creative Director posture.</p><p class="why"><strong>Why this handle:</strong> Thesis post. One chart-quote, one line about overflow beside an in-house team, done.</p><p class="src">Source: <a href="https://alexneiman.com/ai-generated-vs-human-creative-meta-ads/">alexneiman.com</a></p></div>
-<div class="card"><h4>AI ad creative is DTC’s loudest brand-identity fight of 2026</h4><p>D2C Times frames the split: operators who treat gen-AI as production efficiency versus builders who see visual identity eroding when assets regress to the mean. The middle path forming in the piece — humans set the system, AI iterates inside it — is Awed’s sales language almost verbatim.</p><p class="why"><strong>Why this handle:</strong> Anti-slop peg. Quote the fight; offer the human director as the resolution.</p><p class="src">Source: <a href="https://d2c-times.com/ai-generated-ad-creative-is-dtcs-loudest-brand-identity-fight-of-2026/">d2c-times.com</a></p></div>
-<div class="card"><h4>Disclosure rules and shorter asset lifespan are the quiet pitch</h4><p>Adfirm’s 2026 note on Meta AI creative disclosure and fatigue is useful for close conversations. When assets burn out faster and platforms push disclosure, human direction plus an iteration cadence stops sounding soft and starts sounding operational.</p><p class="why"><strong>Why this handle:</strong> Sales-enablement post. Pair with a soft CTA to <a href="https://awedmedia.com/">awedmedia.com</a>.</p><p class="src">Source: <a href="https://www.adfirm.net/blog/meta-ai-creative-disclosure-2026/">adfirm.net</a></p></div></section>
-<section><h2>The Desk — Saturday agenda</h2><div class="card"><h3>Calendar is a blank page</h3><p><strong>Clear.</strong> Primary calendar for <a href="https://calendar.google.com/">emmett@emmettshort.com</a> returned no events for Sat Sep 26 2026 (midnight–midnight PT).</p></div><div class="card"><h3>Today’s Goals — still reading Wednesday</h3><p><strong>Offline.</strong> Mac Notes have been disconnected since Wed Sep 23 6:24 PM PT (pk=7409). Unchecked tops: Connect Olivia IG; write LSN &amp; KOTC; set up editor interviews; edit first Latte Ads; shoot LinkedIn YouTube AO case study; write and shoot LinkedIn Olivia case study; expense Suno · Muse · GoalETA · Peptide app peripherals.</p></div></section>
-<section><h2>Business columns</h2><div class="card"><h3>Hollywood Podcasts</h3><p>CoS morning check around 7:18 AM PT found <strong>0 NEW calls</strong> after the Sep 25 cutoff; overnight, Kirill first-opened the Solomin Founder Mode offer at <strong>$1,400</strong>. Fri snapshot: HP Search Eligible (Limited) at <strong>$35/day</strong>. <a href="https://hollywoodpodcasts.com/">Book and pricing</a>.</p></div><div class="card"><h3>Awed Media</h3><p>Fri snapshot: Awed Search remains <strong>Paused</strong> with a <strong>$5/day</strong> budget. ARMRA cold sequence is draft-only and held; from-line locked to Emmett Short. Contact re-verify and explicit send GO remain open. <a href="https://awedmedia.com/">awedmedia.com</a>.</p></div><div class="card"><h3>Longevity Science News</h3><p>Bixgrow hit the LSN inbox Friday with a commission payout of <strong>$1,910.25</strong>. Ground News waits on Emmett’s Wed quote of <strong>$850 + 15% commission</strong>; Flexispot thread remains open.</p></div><div class="card"><h3>Longevity Latte</h3><p>Fri snapshot: Latte Search Eligible at <strong>$7/day</strong>. Rebecca Johnson’s pre-order still shows the out-of-stock auto-reply path; card not charged.</p></div></section>
-<section><h2>Mail that matters</h2><div class="card"><h3>Kirill opened Solomin — $1,400</h3><p>Sat Sep 26 ~12:13 AM PT: first view of the Founder Mode offer. WhatsApp is still blind; next move must come from email or manual phone check until Web login is restored.</p></div><div class="card"><h3>Courtyard stairs Monday</h3><p>Additional work flagged for <strong>Mon Sep 28, 7:00 AM–5:00 PM</strong> — intermittent construction noise. Plan studio access around it.</p></div><div class="card"><h3>Yvonne’s annual VA review</h3><p>First performance-review notice arrived Friday. Can wait a few days; not a Saturday fire.</p></div><div class="card"><h3>Cybernews exclusivity — still waiting</h3><p>Wait for the brand counter; do not invent one.</p></div><div class="card"><h3>VPNpro scripts landed</h3><p>Kristina sent this week’s BF script list Friday. Production queue fuel when energy returns.</p></div><p class="note">Gap: WhatsApp Web logged out on the box — Kirill DMs unavailable.</p></section>
-<section><h2>Open decisions — needs Emmett</h2><div class="card"><ul><li><strong>Watch Kirill / Solomin</strong> — first open on the $1,400 Founder offer.</li><li><strong>Reconnect Mac Notes</strong> — goals still frozen on Wed Sep 23.</li><li><strong>Reconnect WhatsApp Web</strong> — Kirill + studio ops visibility.</li><li><strong>If energy:</strong> Olivia IG · Write LSN/KOTC · editor interviews · Latte ads · AO LinkedIn case study.</li><li><strong>Yvonne performance review</strong> — days, not today.</li><li><strong>Cybernews exclusivity</strong> — wait for the brand counter.</li><li><strong>ARMRA sequence</strong> — contact verify + send GO still open.</li><li><strong>Courtyard stairs Monday</strong> — studio access around 7 AM–5 PM noise.</li></ul></div></section>
-<footer><strong>Knee of the Curve News</strong> · Sat Sep 26 2026 PT<br>Generated by #1 · for voice spitball<br>Sources: Google Calendar · Gmail · /workspace digests · public web</footer>
-</article></body></html>
+
+<div class="gaps">
+  <strong>Gaps called out, not papered over</strong>
+  Apple Notes offline since Wed Sep 23 6:24 PM PT dump · WhatsApp Web logged out (Kirill DMs blind) · X API 402 credits depleted · Google Ads figures are Fri Sep 25 snapshot only — no invented Sat spend.
+</div>
+
+<!-- ========== SPITBALL FIRST ========== -->
+<section>
+  <h2>Spitball Desk — Social &amp; news angles</h2>
+  <p class="note">X profiles resolve (<a href="https://x.com/emmettshort">@emmettshort</a> · <a href="https://x.com/HollywoodPods">@HollywoodPods</a> · <a href="https://x.com/AwedMedia">@AwedMedia</a>) but live post metrics are unavailable this morning. Every angle below carries a clickable source. No invented engagement numbers.</p>
+
+  <h3 class="handle"><a href="https://x.com/emmettshort">@emmettshort</a></h3>
+
+  <article class="story">
+    <div class="body">
+      <h4>Comedians are puncturing the “AI is inevitable” sermon</h4>
+      <p>The Guardian’s Friday feature follows standup, sketches, and subway-parody ads that treat CEO doom-and-boom talk as material, not scripture. Gallup and CNN polling in the piece frame a public more anxious than excited — which is exactly the tension Knee of the Curve thrives on.</p>
+      <p class="why"><strong>Why this handle:</strong> Tech-comedy voice. One clip, one line about “using the LLM in your brain,” and you’re in the lane without chasing the news cycle’s press-release tone.</p>
+      <p class="src">Source: <a href="https://www.theguardian.com/technology/2026/sep/25/ai-anxiety-comedy">theguardian.com/…/ai-anxiety-comedy</a></p>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="body">
+      <h4>An AI-designed drug nudged six ageing clocks — carefully</h4>
+      <p>Coverage of Rentosertib / Insilico’s phase-2a proteomic-clock readouts is circulating again as longevity bait. The honest frame is biomarker movement, not “reversed ageing” — a distinction LSN readers clock immediately and KOTC can punchline.</p>
+      <p class="why"><strong>Why this handle:</strong> Personal brand sits on the LSN ↔ comedy seam. Post the caveat first; the wow second. That order is the brand.</p>
+      <p class="src">Source: <a href="https://artificialscience.org/2026/09/ai-designed-drug-six-ageing-clocks/">artificialscience.org/…/ai-designed-drug…</a></p>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="body">
+      <h4>The Voyage LA origin story is still live ammo</h4>
+      <p>Voyage’s Hidden Gems interview still carries the Awed + Hollywood Podcasts founder arc in one place — studio, creative shop, and the through-line of building in public. When the timeline needs a spine instead of a hot take, this is the cite.</p>
+      <p class="why"><strong>Why this handle:</strong> Evergreen personal-brand post. Pair with a studio photo or a “what I’d tell 2023 Emmett” line and you’re done.</p>
+      <p class="src">Source: <a href="https://voyagela.com/interview/hidden-gems-meet-emmett-short-of-awed-media-hollywood-podcasts/">voyagela.com/…/emmett-short…</a></p>
+    </div>
+  </article>
+
+  <h3 class="handle"><a href="https://x.com/HollywoodPods">@HollywoodPods</a></h3>
+
+  <article class="story">
+    <a class="play-link" href="https://www.youtube.com/watch?v=luXiCjMpzH4">
+      </a>
+    <div class="body">
+      <h4>Video isn’t replacing audio — it’s expanding the tent</h4>
+      <p>Edison Infinite Dial 2026: 57% of Americans 12+ have both listened to and watched a podcast. Megan Lazovick’s line — “video isn’t replacing podcast audio” — is the cleanest pitch support HP has for 3-cam and Premiere Pack this year. The webinar recording is the primary doc.</p>
+      <p class="why"><strong>Why this handle:</strong> Data-backed studio CTA. Quote the dual-format stat, then hard-link book.</p>
+      <p class="src">Study: <a href="https://www.edisonresearch.com/the-infinite-dial-2026/">edisonresearch.com/the-infinite-dial-2026</a><br/>
+      Video: <a href="https://www.youtube.com/watch?v=luXiCjMpzH4">youtube.com/watch?v=luXiCjMpzH4</a></p>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="body">
+      <h4>The WeHo price war two doors down is real</h4>
+      <p>Melrose Podcasts (Sunset corridor) still lists multi-cam packages from roughly $275/hr with edit and social tiers on RecordingHunt. That keeps HP’s 3-cam at $270 plus the credit loop as a story, not a spreadsheet — “same block, sharper room, clearer book path.”</p>
+      <p class="why"><strong>Why this handle:</strong> Competitive positioning without trash talk. Name the neighborhood economics; sell the room.</p>
+      <p class="src">Source: <a href="https://www.recordinghunt.com/california/west-hollywood/melrose-podcasts">recordinghunt.com/…/melrose-podcasts</a><br/>
+      <span class="note" style="display:inline">Card art is decorative (OG photo blocked 403) — not a Melrose interior photo.</span></p>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="body">
+      <h4>Own rates + book CTA — say them out loud</h4>
+      <p>Public homepage still posts the ladder: Audio $125 · 1-cam $180 · 3-cam $270 · Premiere Pack $899/2hr. Morning posts that bury the price under vibes leave money on the table; the site already did the hard part.</p>
+      <p class="why"><strong>Why this handle:</strong> Direct-response hygiene. Rates in the caption, book link in the bio/first comment, studio photo as the thumb.</p>
+      <p class="src">Source: <a href="https://hollywoodpodcasts.com/">hollywoodpodcasts.com</a></p>
+    </div>
+  </article>
+
+  <h3 class="handle"><a href="https://x.com/AwedMedia">@AwedMedia</a></h3>
+
+  <article class="story">
+    <div class="body">
+      <h4>Hybrid creative is beating pure AI on Meta — when trust matters</h4>
+      <p>Alex Neiman’s 2026 write-up argues AI wins CTR and velocity while human craft wins trust and conversion as AOV climbs (roughly above $100), with hybrid pipelines claiming about 2.3× CTR versus pure AI in the cited tests. That maps cleanly onto Awed’s Human Creative Director posture.</p>
+      <p class="why"><strong>Why this handle:</strong> Thesis post. One chart-quote, one line about overflow beside an in-house team, done.</p>
+      <p class="src">Source: <a href="https://alexneiman.com/ai-generated-vs-human-creative-meta-ads/">alexneiman.com/…/ai-generated-vs-human…</a></p>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="body">
+      <h4>AI ad creative is DTC’s loudest brand-identity fight of 2026</h4>
+      <p>D2C Times frames the split: operators who treat gen-AI as production efficiency versus builders who see visual identity eroding when assets regress to the mean. The middle path forming in the piece — humans set the system, AI iterates inside it — is Awed’s sales language almost verbatim.</p>
+      <p class="why"><strong>Why this handle:</strong> Anti-slop peg. Quote the fight; offer the human director as the resolution, not the lecture.</p>
+      <p class="src">Source: <a href="https://d2c-times.com/ai-generated-ad-creative-is-dtcs-loudest-brand-identity-fight-of-2026/">d2c-times.com/…/ai-generated-ad-creative…</a><br/>
+      <span class="note" style="display:inline">Card art is decorative (page served no usable OG image).</span></p>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="body">
+      <h4>Disclosure rules and shorter asset lifespan are the quiet pitch</h4>
+      <p>Adfirm’s 2026 note on Meta AI creative disclosure and fatigue is less flashy than the hybrid CTR charts — and more useful for close conversations. When assets burn out faster and platforms push disclosure, human direction plus an iteration cadence stops sounding soft and starts sounding operational.</p>
+      <p class="why"><strong>Why this handle:</strong> Sales-enablement post. Pair with the Human Creative Director decorative frame and a soft CTA to awedmedia.com.</p>
+      <p class="src">Source: <a href="https://www.adfirm.net/blog/meta-ai-creative-disclosure-2026/">adfirm.net/…/meta-ai-creative-disclosure-2026</a> · site: <a href="https://awedmedia.com/">awedmedia.com</a></p>
+    </div>
+  </article>
+</section>
+
+<!-- ========== DESK ========== -->
+<section>
+  <h2>The Desk — Saturday agenda</h2>
+  <div class="editorial">
+    <h3>Calendar is a blank page</h3>
+    <p><span class="flag clear">Clear</span> Primary calendar for <a href="https://calendar.google.com/">emmett@emmettshort.com</a> returned no events for Sat Sep 26 2026 (midnight–midnight PT). No meetings, focus blocks, or all-day items. The day is yours to protect or fill.</p>
+  </div>
+  <div class="editorial">
+    <h3>Today’s Goals — still reading Wednesday</h3>
+    <p><span class="flag offline">Offline</span> Mac Notes have been disconnected since the last live NoteStore dump <strong>Wed Sep 23 6:24 PM PT</strong> (pk=7409). Saturday’s 6:06 AM PT pulse was the ninth consecutive miss. Until the Mac reconnects, these are the unchecked tops from that dump — useful as a memory aid, not a live checklist:</p>
+    <ul>
+      <li>Connect Olivia IG</li>
+      <li>Write LSN &amp; KOTC</li>
+      <li>Set up editor interviews</li>
+      <li>Edit first Latte Ads</li>
+      <li>Shoot LinkedIn YouTube AO Case Study</li>
+      <li>Write and shoot LinkedIn Olivia Case study</li>
+      <li>Expense Suno · Muse · GoalETA · Peptide app peripherals</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Business columns</h2>
+  <p class="note">Only statuses verified from workspace digests and Gmail. Fri ads snapshot only — no invented Sat ROAS.</p>
+
+  <div class="editorial">
+    <h3>Hollywood Podcasts</h3>
+    <p>CoS morning check around 7:18 AM PT found <strong>0 NEW calls</strong> after the Sep 25 2:58 PM PT cutoff; the newest row remains the digested +1 323-200-9207 spam. Overnight, Kirill first-opened the Solomin Founder Mode offer at <strong>$1,400</strong> — the thread that matters more than the empty call log.</p>
+    <p>Ads from the Fri Sep 25 snapshot: HP Search still Eligible (Limited) at <strong>$35/day</strong>. Book and pricing live on <a href="https://hollywoodpodcasts.com/">hollywoodpodcasts.com</a>.</p>
+  </div>
+
+  <div class="editorial">
+    <div class="shot"><img src="assets/awed-human-cd.jpg" alt="Awed Media — Human Creative Director decorative"/></div>
+    <h3>Awed Media</h3>
+    <p>Fri ads snapshot: Awed Search remains <strong>Paused</strong> with a <strong>$5/day</strong> budget still listed. The ARMRA cold sequence is draft-only and held — <strong>from-line locked to Emmett Short</strong> (not Yvonne). Contact re-verify (Hamid may have left) plus an explicit send GO are still required before anything leaves the box. Site: <a href="https://awedmedia.com/">awedmedia.com</a>.</p>
+  </div>
+
+  <div class="editorial">
+    <h3>Longevity Science News</h3>
+    <p>Bixgrow hit the LSN inbox Friday around 11:56 AM PT with a commission payout of <strong>$1,910.25</strong> — nineteen-ten, not nineteen dollars. Ground News still sits on Emmett’s Wed Sep 23 quote of <strong>$850 + 15% commission</strong>, waiting Chase/JCW; no accept or counter seen in the last check window. Flexispot: Emmett pinged Arno Friday for a timeline update; thread remains open.</p>
+  </div>
+
+  <div class="editorial">
+    <h3>Longevity Latte</h3>
+    <p>Fri ads snapshot: Latte Search Eligible at <strong>$7/day</strong> (Maximize clicks, per prior weekday notes). Rebecca Johnson’s Wed Sep 24 pre-order still shows the out-of-stock auto-reply path — card not charged; earlier day-plan marked that test path ignore. Investor one-pager lives under <code>/workspace/projects/longevity-latte-dashboard/</code> (model defaults, not live sales).</p>
+  </div>
+</section>
+
+<section>
+  <h2>Mail that matters</h2>
+
+  <div class="editorial">
+    <h3>Kirill opened Solomin — $1,400</h3>
+    <p>Sat Sep 26 ~12:13 AM PT: first view of the Founder Mode offer. Personal and hp-business both carried the ping. WhatsApp is still blind, so the next move — if any — has to come from email or a manual phone check until Web login is restored.</p>
+    <p class="src"><a href="https://mail.google.com/mail/?authuser=emmett@emmettshort.com#all/thread-f:1877377586962375434">Open in Gmail (personal)</a> · <a href="https://mail.google.com/mail/?authuser=business@hollywoodpodcasts.com#all/thread-f:1877377587142933577">hp-business</a></p>
+  </div>
+
+  <div class="editorial">
+    <h3>Courtyard stairs Monday</h3>
+    <p>Sunset Place / Venice Investments flagged additional work on the courtyard front stairs for <strong>Mon Sep 28, 7:00 AM–5:00 PM</strong> — intermittent construction noise. Plan studio access around it.</p>
+    <p class="src"><a href="https://mail.google.com/mail/?authuser=emmett@emmettshort.com#all/thread-f:1877337403021645566">Open in Gmail</a></p>
+  </div>
+
+  <div class="editorial">
+    <h3>Yvonne’s annual VA review — first notice</h3>
+    <p>20four7VA sent the first performance-review notice Friday ~10:42 AM PT. Can wait a few days; not a Saturday fire.</p>
+    <p class="src"><a href="https://mail.google.com/mail/?authuser=emmett@emmettshort.com#all/thread-f:1877326569174924121">Open in Gmail</a></p>
+  </div>
+
+  <div class="editorial">
+    <h3>LSN Bixgrow — $1,910.25</h3>
+    <p>Commission payout notice confirmed in the LSN inbox. Celebrate quietly; don’t mis-hear it as $19.10.</p>
+    <p class="src"><a href="https://mail.google.com/mail/?authuser=longevitysciencenews@gmail.com#all/thread-f:1877331214834083410">Open in LSN Gmail</a></p>
+  </div>
+
+  <div class="editorial">
+    <h3>Cybernews exclusivity — still waiting</h3>
+    <p>George asked what the brand will offer for exclusivity (Thu Sep 24). Day-plan stance remains wait; do not invent a counter.</p>
+    <p class="src"><a href="https://mail.google.com/mail/?authuser=emmett@emmettshort.com#all/thread-f:1865012566360815158">Open in Gmail</a></p>
+  </div>
+
+  <div class="editorial">
+    <h3>VPNpro scripts landed</h3>
+    <p>Kristina sent this week’s BF script list Friday (Hostinger / Bluehost / Nord / Proton and the rest of the batch). Production queue fuel when energy returns.</p>
+    <p class="src"><a href="https://mail.google.com/mail/?authuser=emmett@emmettshort.com#all/thread-f:1868975791207165664">Open in Gmail</a></p>
+  </div>
+
+  <p class="note"><span class="flag offline">Gap</span> WhatsApp Web logged out on the box — Kirill DMs unavailable.</p>
+</section>
+
+<section>
+  <h2>Open decisions — needs Emmett</h2>
+  <div class="editorial">
+    <p>Saturday doesn’t demand a hero sprint. It does ask for a few clear calls:</p>
+    <ul>
+      <li><strong>Watch Kirill / Solomin</strong> — first open on the $1,400 Founder offer; DMs blind until WhatsApp Web is back.</li>
+      <li><strong>Reconnect Mac Notes</strong> — goals still frozen on Wed Sep 23.</li>
+      <li><strong>Reconnect WhatsApp Web on the box</strong> — Kirill + studio ops visibility.</li>
+      <li><strong>If energy:</strong> Olivia IG · Write LSN/KOTC · editor interviews · Latte ads · AO LinkedIn case study.</li>
+      <li><strong>Yvonne performance review</strong> — days, not today.</li>
+      <li><strong>Cybernews exclusivity</strong> — wait for the brand counter.</li>
+      <li><strong>ARMRA sequence</strong> — Emmett Short from-line draft held; contact verify + send GO still open.</li>
+      <li><strong>Courtyard stairs Monday</strong> — studio access around 7 AM–5 PM noise.</li>
+    </ul>
+  </div>
+</section>
+
+</div><!-- /.wrap -->
+
+<footer class="footer">
+  <strong>Knee of the Curve News</strong> · Sat Sep 26 2026 PT<br/>
+  Generated by #1 · for voice spitball<br/>
+  Sources: Google Calendar · Gmail (personal / hp-business / LSN) · /workspace digests · public web (linked above)<br/>
+  Paths: <code>/workspace/morning-paper/2026-09-26/knee-of-the-curve-news.html</code><br/>
+  <code>/workspace/morning-paper/2026-09-26/knee-of-the-curve-news.pdf</code>
+</footer>
+
+</article>
+</body>
+</html>
